@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import DummyFunc from "gatsby-source-storyblok"
 import configuration from '../../gatsby-config'
 import { storyblokInit, apiPlugin, StoryblokComponent, storyblokEditable } from "@storyblok/react"
-import { useStoryblok } from '../lib/storyblok'
+import { useStoryblok } from 'gatsby-source-storyblok'
 import Teaser from '../components/Teaser'
 import Grid from '../components/Grid'
 import Feature from '../components/Feature'
