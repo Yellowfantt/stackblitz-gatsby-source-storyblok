@@ -17,7 +17,14 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-source-storyblok`,
+    {
+      resolve: 'gatsby-source-storyblok',
+      options: {
+        accessToken: 'OurklwV5XsDJTIE1NJaD2wtt',
+        version: 'draft',
+        localAssets: true,
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useStoryblokBridge } from "@storyblok/js";
+import { useStoryblokBridge } from "@storyblok/react";
 
 export function useStoryblok(originalStory) {
   const storyCopy = { ...originalStory }
@@ -12,9 +12,7 @@ export function useStoryblok(originalStory) {
 
   useEffect(() => {
     // eslint-disable-next-line
-    useStoryblokBridge(story.id, (newStory) => setStory(newStory), {
-      resolveRelations: ["posts-list.posts"],
-    });
+    useStoryblokBridge(story.id, (newStory) => setStory(newStory));
   }, []);
 
   return story;
