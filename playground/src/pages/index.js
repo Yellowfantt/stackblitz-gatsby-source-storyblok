@@ -59,6 +59,7 @@ export const query = graphql`
       full_slug
       uuid
       id
+      internalId
     }
   }
 `
