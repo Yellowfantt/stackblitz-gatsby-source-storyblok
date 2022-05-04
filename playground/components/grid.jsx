@@ -1,5 +1,5 @@
 import React from "react";
-import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
+import { StoryblokComponent, storyblokEditable } from "gatsby-source-storyblok";
 
 const Grid = ({ blok }) => (
   <ul {...storyblokEditable(blok)} key={blok._uid} data-test="grid">

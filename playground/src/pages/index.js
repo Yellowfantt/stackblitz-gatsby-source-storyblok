@@ -1,17 +1,13 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import DummyFunc from "gatsby-source-storyblok"
 import configuration from '../../gatsby-config'
-import { storyblokInit, apiPlugin, StoryblokComponent, storyblokEditable } from "@storyblok/react"
-import { useStoryblok } from 'gatsby-source-storyblok'
+import { storyblokInit, apiPlugin, StoryblokComponent, storyblokEditable, useStoryblok } from "gatsby-source-storyblok"
 import Teaser from '../components/Teaser'
 import Grid from '../components/Grid'
 import Feature from '../components/Feature'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-console.log(DummyFunc())
 
 const sbConfig = configuration.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
 
