@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import configuration from '../../gatsby-config'
-import { storyblokInit, apiPlugin, StoryblokComponent, storyblokEditable, useStoryblok } from "gatsby-source-storyblok"
+import { storyblokInit, apiPlugin, StoryblokComponent, storyblokEditable, useStoryblokState } from "gatsby-source-storyblok"
 import Teaser from '../components/Teaser'
 import Grid from '../components/Grid'
 import Feature from '../components/Feature'
@@ -24,7 +24,7 @@ storyblokInit({
 const IndexPage = ({ data }) => {
   console.log(data)
   let story = data.storyblokEntry
-  story = useStoryblok(story)
+  story = useStoryblokState(story)
 
   const components = story.content.body.map(blok => (<StoryblokComponent blok={blok} key={blok._uid} />))
 
