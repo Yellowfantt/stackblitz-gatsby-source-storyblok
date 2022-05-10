@@ -1,25 +1,14 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
-import configuration from '../../gatsby-config'
-import { storyblokInit, apiPlugin, StoryblokComponent, storyblokEditable, useStoryblokState } from "gatsby-source-storyblok"
-import Teaser from '../components/Teaser'
-import Grid from '../components/Grid'
-import Feature from '../components/Feature'
+
+import { StoryblokComponent, storyblokEditable, useStoryblokState } from "gatsby-source-storyblok"
+
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const sbConfig = configuration.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
+console.log('Storyblok INITTT')
 
-storyblokInit({
-  accessToken: sbConfig.options.accessToken,
-  use: [apiPlugin],
-  components: {
-    teaser: Teaser,
-    grid: Grid,
-    feature: Feature
-  }
-});
 
 const IndexPage = ({ data }) => {
   console.log(data)

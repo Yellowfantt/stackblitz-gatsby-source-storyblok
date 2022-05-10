@@ -141,7 +141,7 @@ For more info regarding The File System Routes API see the Gatsby docs: [docs/re
 ```
 |-- src
    |-- pages
-      |-- {storyblokEntry.slug}.js
+      |-- {storyblokEntry.full_slug}.js
 ```
 
 
@@ -158,8 +158,8 @@ export default function StoryblokEntry({ data }) {
 }
 
 export const query = graphql`
-  query ($slug: String!) {
-    storyblokEntry(slug: { eq: $slug }) {
+  query ($full_slug: String!) {
+    storyblokEntry(full_slug: { eq: $full_slug }) {
       id
       name
       full_slug

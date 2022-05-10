@@ -6,9 +6,6 @@ import Teaser from '../components/Teaser'
 import Grid from '../components/Grid'
 import Feature from '../components/Feature'
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-
 const sbConfig = configuration.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
 
 storyblokInit({
@@ -29,19 +26,10 @@ const IndexPage = ({ data }) => {
   const components = story.content.body.map(blok => (<StoryblokComponent blok={blok} key={blok._uid} />))
 
   return (
-    <Layout>
-      <div {...storyblokEditable(story.content)}>
-        <Seo title="Home" />
-        <h1>{story.name}</h1>
-        {components}
-        <p>
-          <Link to="/page-2/">Go to page 2</Link> <br />
-          <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-          <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-          <Link to="/using-dsg">Go to "Using DSG"</Link>
-        </p>
-      </div>
-    </Layout>
+    <div {...storyblokEditable(story.content)}>
+      <h1>{story.name}</h1>
+      {components}
+    </div>
   )
 }
 
@@ -49,7 +37,7 @@ export default IndexPage
 
 export const query = graphql`
   query HomeQuery {
-    storyblokEntry(full_slug: { eq: "gatsby/" }) {
+    storyblokEntry(full_slug: { eq: "gatsby/test" }) {
       content
       name
       full_slug

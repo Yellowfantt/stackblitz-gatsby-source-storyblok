@@ -8,9 +8,28 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { storyblokInit, apiPlugin } from "gatsby-source-storyblok"
+import Teaser from './Teaser'
+import Grid from './Grid'
+import Feature from './Feature'
+import configuration from '../../gatsby-config'
 
 import Header from "./header"
 import "./layout.css"
+
+const sbConfig = configuration.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
+
+storyblokInit({
+  accessToken: sbConfig.options.accessToken,
+  use: [apiPlugin],
+  components: {
+    teaser: Teaser,
+    grid: Grid,
+    feature: Feature
+  }
+});
+
+console.log('Storyblok INITTT')
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

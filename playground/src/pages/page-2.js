@@ -4,6 +4,8 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+console.log('Storyblok INITTT')
+
 const SecondPage = () => (
   <Layout>
     <Seo title="Page two" />
