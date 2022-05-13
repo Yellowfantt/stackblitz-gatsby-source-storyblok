@@ -1,6 +1,6 @@
 # Introduction
 
-This is a Gatsby source plugin for building websites using the [Storyblok](https://www.storyblok.com) headless CMS with true visual preview as a data source. 
+This is a Gatsby source plugin for building websites using the [Storyblok](https://www.storyblok.com) headless CMS with true visual preview as a data source.
 
 ## Install
 
@@ -26,6 +26,44 @@ module.exports = {
     }
   ]
 }
+```
+
+`src/components/layout.js`
+
+```JavaScript
+import * as React from "react"
+import PropTypes from "prop-types"
+import { storyblokInit, apiPlugin } from "gatsby-source-storyblok"
+import Teaser from './Teaser'
+import Grid from './Grid'
+import Feature from './Feature'
+import configuration from '../../gatsby-config'
+
+const sbConfig = configuration.plugins.find((item) => item.resolve === 'gatsby-source-storyblok')
+
+storyblokInit({
+  accessToken: sbConfig.options.accessToken,
+  use: [apiPlugin],
+  components: {
+    teaser: Teaser,
+    grid: Grid,
+    feature: Feature
+  }
+});
+
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <main>{children}</main>
+    </div>
+  )
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout
 ```
 
 ### With Gatsby's image
@@ -170,67 +208,40 @@ export const query = graphql`
 
 ## Rendering Storyblok content
 
-To source Storyblok's content add `content` to your GraphQL query. By using a switch statement you can make decisions about how to render each of the bloks.
+To source Storyblok's content add content to your GraphQL query. By importing `StoryblokComponent`, you can render components dynamically. `storyblokEditable` function lets you to make your components editable in [storyblok.com](https://www.storyblok.com/)
 
 ```js
-import React, { Fragment } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
+import { StoryblokComponent, storyblokEditable, useStoryblokState } from "gatsby-source-storyblok"
 
-const getBlok = (blok) => {
-  const { component } = blok
+const IndexPage = ({ data }) => {
+  let story = data.storyblokEntry
+  story = useStoryblokState(story)
 
-  switch (component) {
-    case 'teaser':
-      return (
-        <Fragment>
-          <h2>{blok.headline}</h2>
-          <pre>{JSON.stringify(blok, null, 2)}</pre>
-        </Fragment>
-      )
-
-    case 'grid':
-      return (
-        <Fragment>
-          {blok.columns.map((column, index) => {
-            return <pre key={index}>{JSON.stringify(column, null, 2)}</pre>
-          })}
-        </Fragment>
-      )
-
-    case 'feature':
-      return (
-        <Fragment>
-          <h2>{blok.name}</h2>
-          <pre>{JSON.stringify(blok, null, 2)}</pre>
-        </Fragment>
-      )
-
-    default:
-      return null
-  }
-}
-
-export default function StoryblokEntry({ data }) {
-  const story = data.storyblokEntry
-  const { title, body } = JSON.parse(story.content)
+  const components = story.content.body.map(blok => (<StoryblokComponent blok={blok} key={blok._uid} />))
 
   return (
-    <div>
-      <h1>{title}</h1>
-      {body.map((blok, index) => {
-        return <Fragment key={index}>{getBlok(blok)}</Fragment>
-      })}
-    </div>
+    <Layout>
+      <div {...storyblokEditable(story.content)}>
+        <h1>{story.name}</h1>
+        {components}
+      </div>
+    </Layout>
   )
 }
 
+export default IndexPage
+
 export const query = graphql`
-  query ($slug: String!) {
-    storyblokEntry(slug: { eq: $slug }) {
-      id
+  query HomeQuery {
+    storyblokEntry(full_slug: { eq: "gatsby/test" }) {
+      content
       name
       full_slug
-      content
+      uuid
+      id
+      internalId
     }
   }
 `
