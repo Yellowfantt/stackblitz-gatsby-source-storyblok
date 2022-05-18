@@ -291,7 +291,7 @@ sbBridge.on(["input", "published", "change"], (event) => {
 
 You need to set the `localAssets` option to `true`. Here is an example of the usage:
 
-```
+```js
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
