@@ -11,20 +11,17 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/gatsby-source-storyblok">
-    <img src="https://img.shields.io/npm/v/gatsby-source-storyblok/latest.svg?style=flat-square" alt="Storyblok Gatsby" />
+    <img src="https://img.shields.io/npm/v/gatsby-source-storyblok/latest.svg?style=flat-square&color=09b3af" alt="gatsby-source-storyblok" />
   </a>
   <a href="https://www.npmjs.com/package/gatsby-source-storyblok" rel="nofollow">
-    <img src="https://img.shields.io/npm/dt/gatsby-source-storyblok.svg?style=flat-square" alt="npm">
+    <img src="https://img.shields.io/npm/dt/gatsby-source-storyblok.svg?style=appveyor&color=09b3af" alt="npm">
   </a>
-</p>
-
-<p align="center">
   <a href="https://discord.gg/jKrbAMz">
    <img src="https://img.shields.io/discord/700316478792138842?label=Join%20Our%20Discord%20Community&style=appveyor&logo=discord&color=09b3af">
    </a>
   <a href="https://twitter.com/intent/follow?screen_name=storyblok">
     <img src="https://img.shields.io/badge/Follow-%40storyblok-09b3af?style=appveyor&logo=twitter" alt="Follow @Storyblok" />
-  </a>
+  </a><br/>
   <a href="https://app.storyblok.com/#!/signup?utm_source=github.com&utm_medium=readme&utm_campaign=gatsby-source-storyblok">
     <img src="https://img.shields.io/badge/Try%20Storyblok-Free-09b3af?style=appveyor&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAHqADAAQAAAABAAAAHgAAAADpiRU/AAACRElEQVRIDWNgGGmAEd3D3Js3LPrP8D8WXZwSPiMjw6qvPoHhyGYwIXNAbGpbCjbzP0MYuj0YFqMroBV/wCxmIeSju64eDNzMBJUxvP/9i2Hnq5cM1devMnz984eQsQwETeRhYWHgIcJiXqC6VHlFBjUeXgav40cIWkz1oLYXFmGwFBImaDFBHyObcOzdW4aSq5eRhRiE2dgYlpuYoYSKJi8vw3GgWnyAJIs/AuPu4scPGObd/fqVQZ+PHy7+6udPOBsXgySLDfn5GRYYmaKYJcXBgWLpsx8/GPa8foWiBhuHJIsl2DkYQqWksZkDFgP5PObcKYYff//iVAOTIDlx/QPqRMb/YSYBaWlOToZIaVkGZmAZSQiQ5OPtwHwacuo4iplMQEu6tXUZMhSUGDiYmBjylFQYvv/7x9B04xqKOnQOyT5GN+Df//8M59ASXKyMHLoyDD5JPtbj42OYrm+EYgg70JfuYuIoYmLs7AwMjIzA+uY/zjAnyWJpDk6GOFnCvrn86SOwmsNtKciVFAc1ileBHFDC67lzG10Yg0+SjzF0ownsf/OaofvOLYaDQJoQIGix94ljv1gIZI8Pv38zPvj2lQWYf3HGKbpDCFp85v07NnRN1OBTPY6JdRSGxcCw2k6sZuLVMZ5AV4s1TozPnGGFKbz+/PE7IJsHmC//MDMyhXBw8e6FyRFLv3Z0/IKuFqvFyIqAzd1PwBzJw8jAGPfVx38JshwlbIygxmYY43/GQmpais0ODDHuzevLMARHBcgIAQAbOJHZW0/EyQAAAABJRU5ErkJggg==" alt="Follow @Storyblok" />
   </a>
@@ -45,7 +42,7 @@ npm install gatsby-source-storyblok
 
 ### Initialization
 
-Register the plugin on your application and add the [access token](https://www.storyblok.com/docs/api/content-delivery#topics/authentication?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-react) of your Storyblok space. You can also add the `apiPlugin` in case that you want to use the Storyblok API Client:
+Register the plugin on your application and add the [access token](https://www.storyblok.com/docs/api/content-delivery#topics/authentication?utm_source=github.com&utm_medium=readme&utm_campaign=gatsby-source-storyblok) of your Storyblok space. You can also add the `apiPlugin` in case that you want to use the Storyblok API Client:
 
 > You need to declare the plugin use and its options in `gatsby-config.js`
 
@@ -96,7 +93,7 @@ That's it! All the features are enabled for you: the _Api Client_ for interactin
 `gatsby-source-storyblok` does three actions when you initialize it:
 
 - Provides a `useStoryblokState` custom hook in your app, that parses story content JSON into the object.
-- Loads [Storyblok Bridge](https://www.storyblok.com/docs/Guides/storyblok-latest-js?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-react) for real-time visual updates.
+- Loads [Storyblok Bridge](https://www.storyblok.com/docs/Guides/storyblok-latest-js?utm_source=github.com&utm_medium=readme&utm_campaign=gatsby-source-storyblok) for real-time visual updates.
 - Provides a `storyblokEditable` function to link editable components to the Storyblok Visual Editor.
 
 #### 1. Fetching Content
@@ -205,7 +202,7 @@ const Feature = ({ blok }) => {
 export default Feature;
 ```
 
-Where `blok` is the actual blok data coming from [Storblok's Content Delivery API](https://www.storyblok.com/docs/api/content-delivery?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-react).
+Where `blok` is the actual blok data coming from [Storblok's Content Delivery API](https://www.storyblok.com/docs/api/content-delivery?utm_source=github.com&utm_medium=readme&utm_campaign=gatsby-source-storyblok).
 
 As an example, you can check in our [Gatsby.js example demo]() how we use APIs provided from React SDK to combine with Gatsby.js projects.
 
@@ -285,9 +282,9 @@ sbBridge.on(["input", "published", "change"], (event) => {
 });
 ```
 
-## Gatsby feature references
+### Gatsby feature references
 
-### With Gatsby's image
+#### With Gatsby's image
 
 You need to set the `localAssets` option to `true`. Here is an example of the usage:
 
@@ -322,7 +319,7 @@ export const pageQuery = graphql`
 `
 ```
 
-### With Gatsby's createPages
+#### With Gatsby's createPages
 
 For more info regarding `createPages` see the Gatsby docs: [docs/reference/config-files/gatsby-node/#createPages](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createPages)
 
@@ -393,7 +390,7 @@ exports.createPages = async ({ graphql, actions }) => {
 ```
 
 
-### With Gatsby's File System Routes API
+#### With Gatsby's File System Routes API
 
 For more info regarding The File System Routes API see the Gatsby docs: [docs/reference/routing/file-system-route-api/](https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/)
 
@@ -435,7 +432,7 @@ export const query = graphql`
 `
 ```
 
-### The options object in details
+#### The options object in details
 
 `gatsby-config.js`
 
@@ -459,7 +456,7 @@ export const query = graphql`
 * `includeLinks`: If 'true' you can query links by allStoryblokLinkEntry. The links query lets you create a dynamic navigation tree as it includes also content folders.
 * `languages`: An array of strings that will be used in languages request instead of languages in space settings. Use it to only load the languages that you want to.
 
-### How to query all Content Entries
+#### How to query all Content Entries
 
 To get all entries unfiltered you can do the following query:
 
@@ -486,7 +483,7 @@ To get all entries unfiltered you can do the following query:
 }
 ```
 
-#### How to query filtering of content inside a folder
+##### How to query filtering of content inside a folder
 
 The following example shows a filter to get all items from a news folder:
 
@@ -503,7 +500,7 @@ The following example shows a filter to get all items from a news folder:
 }
 ```
 
-#### How to query filtering of languages
+##### How to query filtering of languages
 
 If you use field level translations you can filter for a specific language using following query:
 
@@ -521,7 +518,7 @@ If you use field level translations you can filter for a specific language using
 ```
 
 
-#### How to query filtering on content type fields
+##### How to query filtering on content type fields
 
 Every field of your content types is available via the prefix ```field_```.
 
@@ -541,7 +538,7 @@ This lets you for example to query for a specific component:
 ```
 
 
-### How to query a single content entry
+#### How to query a single content entry
 ```GraphQL
 {
   storyblokEntry(slug: { eq: "global-navi" }) {
@@ -550,7 +547,7 @@ This lets you for example to query for a specific component:
 }
 ```
 
-### Datasources
+#### Datasources
 
 ```GraphQL
 allStoryblokDatasource {
@@ -565,7 +562,7 @@ allStoryblokDatasource {
 }
 ```
 
-### How to query Datasource entries
+#### How to query Datasource entries
 
 This will return all datasources, with or not dimensions values:
 
@@ -599,7 +596,7 @@ allStoryblokDatasourceEntry(filter: { data_source: { eq: "DATASOURCE_SLUG" }, da
 }
 ```
 
-### How to query links
+#### How to query links
 Use the links api to create a dynamic navigation tree. To use this query you need to add `includeLinks: true` in the plugin options.
 
 ```GraphQL
@@ -622,12 +619,11 @@ allStoryblokLinkEntry {
 
 ## 🔗 Related Links
 
-- **[Storyblok Technology Hub](https://www.storyblok.com/technologies?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-react)**: Storyblok integrates with every framework so that you are free to choose the best fit for your project. We prepared the technology hub so that you can find selected beginner tutorials, videos, boilerplates, and even cheatsheets all in one place.
-- **[Getting Started](https://www.storyblok.com/docs/guide/getting-started?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-react)**: Get a project ready in less than 5 minutes.
-- **[Storyblok CLI](https://github.com/storyblok/storyblok)**: A simple CLI for scaffolding Storyblok projects and fieldtypes.
 - **[Storyblok Gatsby.js Technology Hub](https://www.storyblok.com/tc/gatsbyjs)**: Learn how to develop your own Gatsby.js applications that use Storyblok APIs to retrieve and manage content.
+- **[Getting Started](https://www.storyblok.com/docs/guide/getting-started?utm_source=github.com&utm_medium=readme&utm_campaign=gatsby-source-storyblok)**: Get a project ready in less than 5 minutes.
+- **[Storyblok CLI](https://github.com/storyblok/storyblok)**: A simple CLI for scaffolding Storyblok projects and fieldtypes.
 - **[Storyblok React.js example demo](https://stackblitz.com/edit/react-sdk-demo)**: See and try how React SDK works with React.js projects
-- **[Storyblok Gatsby.js example demo]()**: See and try how gatsby-source-storyblok works with Gatsby.js projects
+- **[Storyblok Gatsby.js example demo](https://codesandbox.io/s/github/storyblok/getting-started/tree/master/gatsbyjs?fontsize=14&hidenavigation=1&theme=dark)**: See and try how gatsby-source-storyblok works with Gatsby.js projects
 
 ## ℹ️ More Resources
 
@@ -638,5 +634,5 @@ allStoryblokLinkEntry {
 
 ### Contributing
 
-Please see our [contributing guidelines](https://github.com/storyblok/.github/blob/main/contributing.md) and our [code of conduct](https://www.storyblok.com/trust-center#code-of-conduct?utm_source=github.com&utm_medium=readme&utm_campaign=storyblok-react).
+Please see our [contributing guidelines](https://github.com/storyblok/.github/blob/main/contributing.md) and our [code of conduct](https://www.storyblok.com/trust-center#code-of-conduct?utm_source=github.com&utm_medium=readme&utm_campaign=gatsby-source-storyblok).
 This project use [semantic-release](https://semantic-release.gitbook.io/semantic-release/) for generate new versions by using commit messages and we use the Angular Convention to naming the commits. Check [this question](https://semantic-release.gitbook.io/semantic-release/support/faq#how-can-i-change-the-type-of-commits-that-trigger-a-release) about it in semantic-release FAQ.
